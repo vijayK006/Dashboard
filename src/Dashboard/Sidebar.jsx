@@ -1,20 +1,12 @@
 import React from 'react';
-import {CgMenuGridR} from 'react-icons/cg';
 import {BiHomeAlt2, BiCategory} from 'react-icons/bi';
 import {BsDatabaseAdd} from 'react-icons/bs';
 import {FiEdit} from 'react-icons/fi';
 import {MdAutoDelete} from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
-import Footer from './Footer';
-// import logo_nav from '../img/logo/logo_thavari.png'
 
-const Dashboard = () => {
+const Sidebar = () => {
 
-    const opentoggler = ()=>{
-        document.getElementById('mainbody').classList.toggle('maintoggle');
-        document.getElementById('sidemenu').classList.toggle('sidetoggle');
-    
-    }
     
     const toggleDropdown = (dropdownId) => {
       const dropbutton = document.getElementById(dropdownId);
@@ -52,26 +44,10 @@ const Dashboard = () => {
         document.removeEventListener('click', (event) => closeDropdown(event, dropdownId));
       }
     };
-
+    
   return (
     <>
-           <div id="root">
-           
-    <div className='dashboard'>
-<div className='top-bar'>
-  <div className='logo'>
-    <img src="" alt="logo-not-found"/>
-  </div>
-
-  <div className='top-menu-bar'>
-    <ul>
-      <li>Home</li>
-      <li>Logout</li>
-    </ul>
-  </div>
-</div>
-        <div className='side-bar' id='sidemenu'>
-<CgMenuGridR className='menu-icon' onClick={opentoggler}/>
+      <div className='side-bar' id='sidemenu'>
 
 <div className='side-navbar'>
     <ul className='menu'>
@@ -104,23 +80,9 @@ const Dashboard = () => {
         <NavLink className="disble-decoration " to=""><li className='items'><MdAutoDelete className="icons"/> <span className='resp'>Remove Product</span></li></NavLink>
     </ul>
 </div>
-        </div>
-
-        <div className='main-content' id='mainbody'>
-       <h1> main container</h1>
-       <h1> main container</h1>
-
-        </div>
-   
-      
-    
-    </div>
-
-    <Footer/>
-
-    </div>
+        </div> 
     </>
   )
 }
 
-export default Dashboard
+export default Sidebar
